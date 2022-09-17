@@ -21,7 +21,7 @@
     "url": "git+https://github.com/logic-sober/practice-fe.git"
   },
   "scripts": {
-    "test": "node ./__tests__/@ce/underscore_ce.test.js"
+    "test": "jest"
   },
   "bugs": {
     "url": "https://github.com/logic-sober/practice-fe/issues"
