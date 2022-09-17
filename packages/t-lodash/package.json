@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "> TODO: description",
   "author": "ce.tian <ce.tian@qq.com>",
+  "type": "module",
   "homepage": "https://github.com/logic-sober/practice-fe#readme",
   "license": "ISC",
   "main": "lib/lodash-t.js",
@@ -21,9 +22,13 @@
     "url": "git+https://github.com/logic-sober/practice-fe.git"
   },
   "scripts": {
-    "test": "node ./__tests__/lodash-t.test.js"
+    "test": "jest"
   },
   "bugs": {
     "url": "https://github.com/logic-sober/practice-fe/issues"
+  },
+  "devDependencies": {
+    "jest": "^29.0.3",
+    "lodash": "^4.17.21"
   }
 }
