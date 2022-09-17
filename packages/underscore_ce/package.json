@@ -1,0 +1,29 @@
+{
+  "name": "@ce/underscore_ce",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "ce.tian <ce.tian@qq.com>",
+  "homepage": "https://github.com/logic-sober/practice-fe#readme",
+  "license": "ISC",
+  "main": "lib/underscore_ce.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://npmrepo.corp.qunar.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/logic-sober/practice-fe.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/@ce/underscore_ce.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/logic-sober/practice-fe/issues"
+  }
+}
