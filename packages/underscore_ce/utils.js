@@ -1,11 +1,25 @@
-function deepEqual(value, result, message) {
+function base(type, value, result, message) {
   it(message, function() {
-    expect(value).toStrictEqual(result);
+    expect(value)[type](result);
   })
+}
+
+function deepEqual(value, result, message) {
+  base('toEqual', value, result, message);
+}
+
+function strictEqual(value, result, message) {
+  base('toStrictEqual', value, result, message);
+}
+
+function ok(value, message) {
+  base('toBe', value, true, message);
 }
 
 
 module.exports = {
   deepEqual,
-  noop: function() {}
+  strictEqual,
+  noop: function() {},
+  ok
 }
