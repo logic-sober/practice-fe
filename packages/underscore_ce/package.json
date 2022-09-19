@@ -25,5 +25,8 @@
   },
   "bugs": {
     "url": "https://github.com/logic-sober/practice-fe/issues"
+  },
+  "devDependencies": {
+    "jest": "^29.0.3"
   }
 }

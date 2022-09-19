@@ -4,8 +4,24 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "test-ce": "lerna exec --scope @ce/underscore_ce -- npm run test",
+    "prepare": "husky install",
+    "validate": "eslint"
+  },
   "devDependencies": {
     "@types/jest": "^29.0.3",
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.23.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "husky": "^8.0.0",
     "lerna": "^5.5.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
