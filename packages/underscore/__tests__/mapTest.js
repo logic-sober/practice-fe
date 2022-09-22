@@ -1,7 +1,7 @@
-const map = require('../lib/map');
+const map = require('../lib/map1');
 const { deepEqual, noop } = require('../utils');
 
-describe('map', function(assert) {
+describe('map1', function(assert) {
   let doubled = map([1, 2, 3], function(num){ return num * 2; });
   deepEqual(doubled, [2, 4, 6], 'doubled numbers');
 

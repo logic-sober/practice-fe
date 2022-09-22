@@ -1,11 +1,12 @@
 const { deepEqual, strictEqual, ok } = require('../utils');
-const each = require('../lib/each');
+const each = require('../lib/each1');
 const include = function (array, value) {
   return array.indexOf(value) > -1;
 }
 
 describe('each', function() {
   each([1, 2, 3], function(num, i) {
+    console.log(num, i + 1);
     strictEqual(num, i + 1, 'each iterators provide value and iteration count');
   });
 
