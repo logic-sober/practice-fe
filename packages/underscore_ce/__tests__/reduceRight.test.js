@@ -30,8 +30,9 @@ describe('reduceRight', () => {
     ? [init, 1, 'a', object]
     : [init, 2, 'b', object];
 
-  reduceRight(object, function (...opts) {
-    if (!args) args = toArray(...opts);
+  reduceRight(object, function () {
+    // eslint-disable-next-line
+    if (!args) args = toArray(arguments);
   }, init);
 
   deepEqual(args, expected);
@@ -46,8 +47,9 @@ describe('reduceRight', () => {
     ? [init, 'a', '2', object]
     : [init, 'b', '1', object];
 
-  reduceRight(object, function (...opts) {
-    if (!args) args = toArray(...opts);
+  reduceRight(object, function () {
+    // eslint-disable-next-line
+    if (!args) args = toArray(arguments);
   }, init);
 
   deepEqual(args, expected);
