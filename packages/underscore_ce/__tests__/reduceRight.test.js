@@ -30,8 +30,14 @@ describe('reduceRight', () => {
     ? [init, 1, 'a', object]
     : [init, 2, 'b', object];
 
+<<<<<<< HEAD
   reduceRight(object, function (...opts) {
     if (!args) args = toArray(...opts);
+=======
+  reduceRight(object, function () {
+    // eslint-disable-next-line
+    if (!args) args = toArray(arguments);
+>>>>>>> a9e187a4743f0f7f735590e55b1a78f50e36ba9b
   }, init);
 
   deepEqual(args, expected);
@@ -46,8 +52,14 @@ describe('reduceRight', () => {
     ? [init, 'a', '2', object]
     : [init, 'b', '1', object];
 
+<<<<<<< HEAD
   reduceRight(object, function (...opts) {
     if (!args) args = toArray(...opts);
+=======
+  reduceRight(object, function () {
+    // eslint-disable-next-line
+    if (!args) args = toArray(arguments);
+>>>>>>> a9e187a4743f0f7f735590e55b1a78f50e36ba9b
   }, init);
 
   deepEqual(args, expected);

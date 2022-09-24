@@ -4,6 +4,14 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "test-ce": "lerna exec --scope @ce/underscore_ce -- npm run test",
+    "prepare": "husky install",
+    "lint": "lint-staged"
+  },
+  "lint-staged": {
+    "*.(js|ts)": ["eslint"]
+  },
   "devDependencies": {
     "@types/jest": "^29.0.3",
     "eslint": "^8.23.1",
