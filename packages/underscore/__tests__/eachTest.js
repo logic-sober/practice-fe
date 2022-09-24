@@ -1,17 +1,19 @@
 const { deepEqual, strictEqual, ok } = require('../utils');
 const each = require('../lib/each1');
+
 const include = function (array, value) {
   return array.indexOf(value) > -1;
-}
+};
 
-describe('each', function() {
-  each([1, 2, 3], function(num, i) {
-    console.log(num, i + 1);
+describe('each', function () {
+  each([1, 2, 3], function (num, i) {
     strictEqual(num, i + 1, 'each iterators provide value and iteration count');
   });
 
   var answers = [];
-  each([1, 2, 3], function(num){ answers.push(num * this.multiplier); }, {multiplier: 5});
+  each([1, 2, 3], function (num) {
+    answers.push(num * this.multiplier);
+  }, { multiplier: 5 });
   deepEqual(answers, [5, 10, 15], 'context object property accessed');
 
   answers = [];

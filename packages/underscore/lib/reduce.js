@@ -1,14 +1,35 @@
+function reduce(data, iteratee, memo, context) {
+  if (data == null) {
+    return memo;
+  }
+  if (!(iteratee instanceof Function)) {
+    console.log('这里咋写');
+  }
+  // 判断是否传递了第三个参数
+  let initial = arguments.length >= 3;
+  // 初始的遍历下标
+  let index = 0;
 
+  if (!initial) {
+  // 如果用户没有传入默认值，那么就取数据的第一项作为默认值
+  memo = data[index];// 新增
+  // 所以遍历就要从第二项开始
+  index += 1;// 新增
+  }
+  // 重置iteratee函数的this指向
+  iteratee = iteratee.bind(context);
 
+  for (let i = index; i < data.length; i++) {
+   memo = iteratee(memo, data[i], i, data);
+  }
+  return memo;
+}
 
-
-
-
-
-// reduce_.reduce(list, iteratee, [memo], [context]) Aliases: inject, foldl
-// 别名为 inject 和 foldl, reduce方法把list中元素归结为一个单独的数值。Memo是reduce函数的初始值，会被每一次成功调用iteratee函数的返回值所取代 。这个迭代传递4个参数：memo,value 和 迭代的index（或者 key）和最后一个引用的整个 list。
-
-// 如果没有memo传递给reduce的初始调用，iteratee不会被列表中的第一个元素调用。第一个元素将取代memo参数传递给列表中下一个元素调用的iteratee函数。
-
-// var sum = _.reduce([1, 2, 3], function(memo, num){ return memo + num; }, 0);
-// => 6
+// 绑定函数 使用call进行绑定
+function bind(fn, context) {
+  // 返回一个匿名函数，执行时重置this指向
+  return function (memo, value, index, collection) {
+    return fn.call(context, memo, value, index, collection);
+  };
+}
+module.exports = reduce;

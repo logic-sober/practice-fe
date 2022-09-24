@@ -1,7 +1,7 @@
 function base(type, value, result, message) {
-  it(message, function() {
+  it(message, function () {
     expect(value)[type](result);
-  })
+  });
 }
 
 function deepEqual(value, result, message) {
@@ -11,6 +11,12 @@ function deepEqual(value, result, message) {
 function strictEqual(value, result, message) {
   base('toStrictEqual', value, result, message);
 }
+
+// function strictEqual1(value, result, message){
+//   it(message,function(){
+//     expect(value).toStrictEqual(result);
+//   })
+// }
 
 function ok(value, message) {
   base('toBe', value, true, message);
