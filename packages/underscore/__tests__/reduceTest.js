@@ -16,7 +16,7 @@ describe('reduce', function () {
   sum = reduce([1, 2, 3], function (memo, num) { return memo + num; });
   strictEqual(sum, 6, 'default initial value');
 
-  const prod = reduce([1, 2, 3, 4], function (memo, num) { return memo * num; });
+  const prod = reduce([1, 2, 3, 4], (memo, num) => { return memo * num; });
   strictEqual(prod, 24, 'can reduce via multiplication');
 
   strictEqual(reduce(null, noop, 138), 138, 'handles a null (with initial value) properly');

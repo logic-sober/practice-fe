@@ -2,9 +2,6 @@ function reduce(data, iteratee, memo, context) {
   if (data == null) {
     return memo;
   }
-  if (!(iteratee instanceof Function)) {
-    console.log('这里咋写');
-  }
   // 判断是否传递了第三个参数
   let initial = arguments.length >= 3;
   // 初始的遍历下标
